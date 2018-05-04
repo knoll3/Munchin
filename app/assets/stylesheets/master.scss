@@ -60,3 +60,16 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
 }
+
+.btn-primary {
+  background: #E3E85A;
+  border: 5px solid #444;
+  color: black;
+}
+
+.btn-primary:hover {
+  background: #b3b747;
+  border: 5px solid #444;
+  color: black;  
+  cursor: pointer;
+}
