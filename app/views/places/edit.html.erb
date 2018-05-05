@@ -1,0 +1,19 @@
+<div class="booyah-box col-10 offset-1 text-center">
+  <h2>Edit Your Place</h2>
+  <br />
+
+  <%= simple_form_for @place do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name,    label: false, required: false, 
+                            autofocus: true %>
+      <%= f.input :address, label: false, required: false %>
+      <%= f.text_area :description, label: false, required: false, 
+                             class: 'text-field' %>
+    </div>
+    <br />
+
+    <div class="form-actions">
+      <%= f.button :submit, "Create", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
