@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+To do: 
+- Style form error messages
+- Improve new place form
+- Improve edit place form labels

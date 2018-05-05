@@ -22,7 +22,6 @@ body {
   font-size: 50px;
 }
 
-
 .pagination {
   margin-top: 15px;
   margin-left: auto;
@@ -125,4 +124,11 @@ textarea {
 
 .delete-place-button {
   margin-left: 15px;
+}
+
+.error {
+  color: #ff3333;
+  background-color: #FFEEEE;
+  border-radius: 3px;
+  padding: 2px 8px 2px 8px;
 }
