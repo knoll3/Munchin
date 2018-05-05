@@ -30,21 +30,20 @@ descriptions = ["Pete makes big salads.",
                 "Pretty good lobster, kind of like the real thing. Just try it.",
                 "Freshest fish in town! *Must be able to breathe underwater."]
 
-
-street_names = ["Marshall Street",
-                "Route 41",
-                "4th Street",
-                "Heather Lane",
-                "Euclid Avenue",
-                "Sunset Drive", 
-                "Old Creek Rd",
-                "Brown St",
-                "Fulton St",
-                "Heather Lane",
-                "Sandy Dr"]
+addresses = ["1700 Temescal Ave Norco, CA 92860-3038",
+             "7325 Summitview DrSeven Hills, OH 44131-4437",
+             "3540 Se Paulen Rd Topeka, KS 66605-9157",
+             "1275 Latham St Memphis, TN 38106-2811",
+             "1925 Akr Pen Rd Akron, OH 44313-4809",
+             "143 Dutch Ln Bridger, MT 59014-9553",
+             "13645 Paddock Dr Wellington, FL 33414-7811",
+             "106 Highledge Dr Penfield, NY 14526-2435",
+             "1499 Sunnybrook Rd Alamo, CA 94507-1146",
+             "101 City Dr Orange, CA 92868-0000",
+             "1 Wilshire Blvd 2600 Los Angeles, CA 90017-3876"]
 
 user = User.first
 
 11.times do |i|
-  Place.create name: names[i], description: descriptions[i], address: "#{(rand*1000).to_i} #{street_names[i]}", user_id: user.id
+  Place.create name: names[i], description: descriptions[i], address: addresses[i], user_id: user.id
 end
