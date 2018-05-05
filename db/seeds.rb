@@ -43,6 +43,8 @@ street_names = ["Marshall Street",
                 "Heather Lane",
                 "Sandy Dr"]
 
+user = User.first
+
 11.times do |i|
-  Place.create name: names[i], description: descriptions[i], address: "#{(rand*1000).to_i} #{street_names[i]}"
+  Place.create name: names[i], description: descriptions[i], address: "#{(rand*1000).to_i} #{street_names[i]}", user_id: user.id
 end
