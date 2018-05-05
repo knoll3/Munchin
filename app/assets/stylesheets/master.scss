@@ -41,7 +41,7 @@ body {
     border-radius: 5px;
 }
 
-.pagination li:hover:not(.active) {
+.pagination li:hover:not(.active) a {
     background-color: #bbb;
     border-radius: 5px;
 }
