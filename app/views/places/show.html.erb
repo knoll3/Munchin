@@ -46,9 +46,30 @@
 
 <div class="clear"></div>
 
+<!-- Photo Modal -->
+<div class="modal fade" id="photo-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a photo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= simple_form_for @photo, url: '#' do |f| %>
+        <div class="modal-body">
+          <%= f.input :caption, label: false, placeholder: "Caption" %>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit "Add Photo", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Comment Modal -->
+<div class="modal fade" id="comment-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -71,9 +92,19 @@
 </div>
 
 <div class="col-10 offset-1">
+  <br /><hr />
+  <h1 class="float-left">Photos</h1>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary add-comment-button float-right" data-toggle="modal" data-target="#photo-modal">
+    Add a Photo
+  </button>
+
+  <div class="clear"></div>
+  <br /><hr />
+
   <h1 class="float-left">Comments</h1>
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary add-comment-button" data-toggle="modal" data-target="#myModal">
+  <button type="button" class="btn btn-primary add-comment-button float-right" data-toggle="modal" data-target="#comment-modal">
     Add a comment
   </button>
 
@@ -94,3 +125,5 @@
     <% end %>
   </div>
 </div>
+
+
