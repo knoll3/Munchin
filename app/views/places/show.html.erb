@@ -56,7 +56,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <%= simple_form_for @photo, url: '#' do |f| %>
+      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
         <div class="modal-body">
           <%= f.input :caption, label: false, placeholder: "Caption" %>
         </div>
@@ -93,6 +93,8 @@
 
 <div class="col-10 offset-1">
   <br /><hr />
+
+  <!-- Show and add photos -->
   <h1 class="float-left">Photos</h1>
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary add-comment-button float-right" data-toggle="modal" data-target="#photo-modal">
@@ -100,8 +102,20 @@
   </button>
 
   <div class="clear"></div>
+
+  <div class="row">
+    <% @place.photos.each do |photo| %>
+      <div class="col-12 col-sm-6">
+        <blockquote>
+          <%= photo.caption %>
+        </blockquote>
+      </div>   
+    <% end %>
+  </div>
+
   <br /><hr />
 
+  <!-- Show and add comments -->
   <h1 class="float-left">Comments</h1>
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary add-comment-button float-right" data-toggle="modal" data-target="#comment-modal">
