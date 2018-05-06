@@ -58,8 +58,27 @@ body {
   color: black;
 }
 
+.booyah-box-dark {
+  -webkit-box-shadow:1px 1px 2px 0 #d0d0d0;
+  -moz-box-shadow:1px 1px 2px 0 #d0d0d0;
+  box-shadow:1px 1px 2px 0 #d0d0d0;
+  background:#eee;
+  border:1px solid #ccc;
+  border-color:#e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 20px;
+  color: black;
+}
+
+
 .booyah-box a {
   color: black;
+  margin-left: 10px;
+}
+
+.btn {
+  font-family: 'comfortaabold', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -113,7 +132,6 @@ input {
 }
 
 .place-buttons {
-  margin-top: 40px;
 }
 
 .delete-place-button {
@@ -129,7 +147,6 @@ input {
 
 #map {
   height: 300px;
-  border: 3px solid black;
 }
 
 .clear {
@@ -137,7 +154,7 @@ input {
 }
 
 blockquote {
-  background: #f9f9f9;
+  background: #eee;
   border-left: 10px solid #ccc;
   margin: 1em 10px;
   padding: 1.5em 10px;
@@ -168,6 +185,28 @@ blockquote p {
   text-align: center;
 }
 
-select {
-  margin-left: 10px;
+
+.place-photo img {
+  margin-top: 5px;
+  max-width: 100%;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border: 0px solid #000000;
+}
+
+.photo-container {
+  padding: 1px;
+}
+
+.photo-row {
+  margin: 0px;
+}
+
+.place-photo-caption {
+  font-style: italic;
+}
+
+.picture {
+  margin-left: 15px;
 }
