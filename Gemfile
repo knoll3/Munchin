@@ -27,6 +27,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'geocoder'
 gem 'figaro'
+gem 'carrierwave', '~> 1.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
