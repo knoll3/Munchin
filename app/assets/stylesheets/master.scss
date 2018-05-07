@@ -32,6 +32,10 @@ html {
   overflow-y: scroll;
 }
 
+.modal-open {
+  padding-right: 0 !important;
+}
+
 body {
   background: image_url('old_moon.png');
   font-family: 'comfortaabold', sans-serif;

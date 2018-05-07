@@ -33,7 +33,7 @@
 
       <div class="col-12 col-lg-7 index-photo text-left">
         <% if place.photos.present? %>
-          <%= image_tag place.photos.first.picture %>
+          <%= image_tag place.photos.last.picture %>
         <% end %>
       </div>
     </div>
