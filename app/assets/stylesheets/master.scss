@@ -1,6 +1,33 @@
 @import "bootstrap";
 @import "font-awesome";
 
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {  
+  h1 {font-size:1.5rem;} /*1rem = 16px*/
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  h1{font-size:2rem;} /*1rem = 16px*/
+
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  h1 {font-size:2.5rem;} /*1rem = 16px*/
+  .btn{font-size:0.5rem;}
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+  h1 {font-size:3rem;} /*1rem = 16px*/    
+  .btn{font-size:1rem}
+}
+
 html { 
   overflow-y: scroll;
 }
@@ -8,18 +35,22 @@ html {
 body {
   background: image_url('old_moon.png');
   font-family: 'comfortaabold', sans-serif;
+  line-height: 1;
 }
 
 .navbar {
   background: image_url('footer_lodyas.png');
   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.6);
   height: 50px;
+  padding: 0;
+  padding-left: 10px;
 }
 
 .navbar-inverse .navbar-brand {
   color: #E3E85A;
   font-family: 'kr_bite_meregular', sans-serif;
   font-size: 50px;
+  padding-top: 0;
 }
 
 .pagination {
@@ -58,19 +89,6 @@ body {
   color: black;
 }
 
-.booyah-box-dark {
-  -webkit-box-shadow:1px 1px 2px 0 #d0d0d0;
-  -moz-box-shadow:1px 1px 2px 0 #d0d0d0;
-  box-shadow:1px 1px 2px 0 #d0d0d0;
-  background:#eee;
-  border:1px solid #ccc;
-  border-color:#e4e4e4 #bebebd #bebebd #e4e4e4;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  padding: 20px;
-  color: black;
-}
-
 
 .booyah-box a {
   color: black;
@@ -80,6 +98,13 @@ body {
 .btn {
   font-family: 'comfortaabold', sans-serif;
 }
+
+.place-buttons .btn {
+  width: 100%;
+  margin: 3px 0;
+  white-space: normal;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -132,6 +157,7 @@ input {
 }
 
 .place-buttons {
+  margin-bottom: 15px;
 }
 
 .delete-place-button {
@@ -153,10 +179,14 @@ input {
   clear: both;
 }
 
+.blockquote-container {
+  padding: 0;
+}
+
 blockquote {
   background: #eee;
   border-left: 10px solid #ccc;
-  margin: 1em 10px;
+  margin-top: 10px;
   padding: 1.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
@@ -172,9 +202,7 @@ blockquote p {
   display: inline;
 }
 
-.add-comment-button {
-  margin-left: 15px;
-}
+
 
 .modal-body textarea {
   width: 100%;
@@ -209,4 +237,12 @@ blockquote p {
 
 .picture {
   margin-left: 15px;
+}
+
+.index-photo img {
+  margin-top: 15px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 5px solid black;
 }
