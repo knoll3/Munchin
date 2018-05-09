@@ -8,7 +8,7 @@
     <div class="carousel-item active">
       <%= image_tag 'slider1.jpg', class: 'd-block img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
-        <h3>Find the best pizza</h3>
+        <h3 class="caption">Find the best pizza</h3>
       </div>
     </div>
     <div class="carousel-item">
@@ -70,7 +70,7 @@
 
       <div class="col-12 col-lg-7 index-photo text-center">
         <% if place.photos.present? %>
-          <%= image_tag place.photos.last.picture %>
+          <%= image_tag place.photos.last.picture, class: 'd-block img-fluid' %>
         <% end %>
       </div>
     </div>
