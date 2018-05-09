@@ -1,11 +1,12 @@
 <div class="booyah-box">
   <div class="row">
-    <div class="col-4">
+    <div class="col-12 col-lg-2 offset-lg-1">
       <%= image_tag 'user.png', class: "user-icon" %>
     </div>
 
-    <div class="col-8">
+    <div class="col-12 col-lg-9 text-center">
       <h1><%= @user.email %></h1>
+      <hr>
       <h3>Member since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
       <h4><%= @user.comments.count %> total comments</h4>
       <h4><%= @user.comments.where(rating: '5_stars').count %> total 5 star reviews</h4>
@@ -17,17 +18,59 @@
 <br><br>
 <h1 class="text-center">My Comments</h1>
 <br><br>
-<div class="row">
-  <% @user.comments.each do |comment| %>
-    <div class="col-12 col-sm-6 ">
-      <h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
-      <blockquote>
-        <% if comment.humanized_rating.present? %>
-          <b><%= comment.humanized_rating %></b> -
+<div class="col-10 offset-1">
+  <div class="row">
+    <% @user.comments.each do |comment| %>
+      <div class="col-12 col-sm-6 ">
+        <h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place), class: "user-comment-link" %></h2>
+        <blockquote>
+          <% if comment.humanized_rating.present? %>
+            <b><%= comment.humanized_rating %></b> -
+          <% end %>
+          <%= comment.message %>
+          <small><%= comment.user.email %></small>
+        </blockquote>
+      </div>
+    <% end %> 
+  </div>
+</div>  
+
+<div class="clear"></div>
+<br><br><hr>
+<h1 class="text-center">My Places</h1>
+<br><br>
+
+<% @user.places.each do |place| %>
+  <div class="booyah-box col-10 offset-1">
+    <div class="row">
+      <div class="col-12 col-lg-4 offset-lg-1">
+        <h1><%= link_to place.name, place_path(place) %></h1>
+        <hr />
+        <i><%= place.address %></i><br /><br />
+        <p><%= place.description %></p><br />
+        <% if place.user.present? %>
+          <small><%= place.user.email %></small>
         <% end %>
-        <%= comment.message %>
-        <small><%= comment.user.email %></small>
-      </blockquote>
+        <% if place.comments.present? %>
+          <div class="col-12 blockquote-container">
+            <blockquote>
+              <% if place.comments.last.humanized_rating.present? %>
+                <b><%= place.comments.last.humanized_rating %></b> -
+              <% end %>
+              <%= place.comments.last.message %>
+              <small><%= place.comments.last.user.email %></small>
+            </blockquote>
+          </div>
+        <% end %>
+      </div>
+      <div class="clear"></div>
+      <div class="col-12 col-lg-7 index-photo text-center">
+        <% if place.photos.present? %>
+          <%= image_tag place.photos.last.picture, class: 'd-block img-fluid' %>
+        <% end %>
+      </div>
     </div>
-  <% end %> 
-</div>
+  </div>
+<% end %>
+
+
